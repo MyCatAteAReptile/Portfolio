@@ -25,7 +25,7 @@ const NavBar = () => {
 
   return (
     <nav className="fixed left-0 right-0 top-0 z-10 bg-[#121212] bg-opacity-100">
-      <div className="mx-auto flex flex-wrap items-center justify-between px-4 py-2">
+      <div className="mx-auto border border-[#33353F] flex container lg:py-4 flex-wrap items-center justify-between px-4 py-2">
         <Link
           href={"/"}
           className="text-2xl font-semibold text-white md:text-5xl"

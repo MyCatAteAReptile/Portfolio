@@ -1,14 +1,21 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import { TextTypeAnimation } from "./UI/TextTypeAnimation";
+import { motion } from "framer-motion";
 
 const HeroSection = () => {
   return (
-    <section>
+    <section className="lg:py-16">
       <div className="grid grid-cols-1 sm:grid-cols-12">
-        <div className="col-span-7 place-self-center text-center sm:text-left">
-          <h1 className="mb-4 text-4xl font-extrabold text-white sm:text-5xl lg:text-6xl">
-            <span className="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+          className="col-span-8 place-self-center justify-self-start text-center sm:text-left"
+        >
+          <h1 className="mb-4 text-4xl font-extrabold text-white sm:text-5xl lg:text-8xl lg:leading-normal">
+            <span className="from-primary-400 to-secondary-600 bg-gradient-to-r bg-clip-text text-transparent">
               Hello, I&apos;m{" "}
             </span>
             <br />
@@ -30,17 +37,22 @@ const HeroSection = () => {
             quibusdam, iure corporis saepe reiciendis eligendi.
           </p>
           <div>
-            <button className="mr-4 w-full rounded-full bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 px-6 py-3 text-white hover:bg-slate-200 sm:w-fit">
+            <button className="via-primary-500 to-secondary-500 mr-4 w-full rounded-full bg-gradient-to-br from-blue-500 px-6 py-3 text-white hover:bg-slate-200 sm:w-fit">
               Hire me
             </button>
-            <button className="mt-3 w-full rounded-full bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 px-1 py-1 text-white hover:bg-slate-800 sm:w-fit">
+            <button className="via-primary-500 to-secondary-500 mt-3 w-full rounded-full bg-gradient-to-br from-blue-500 px-1 py-1 text-white hover:bg-slate-800 sm:w-fit">
               <span className="block rounded-full bg-[#121212] px-5 py-2 hover:bg-slate-800">
                 Download CV
               </span>
             </button>
           </div>
-        </div>
-        <div className="col-span-5 mt-4 place-self-center lg:mt-0">
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+          className="col-span-4 mt-4 place-self-center lg:mt-0"
+        >
           <div className="relative h-[250px] w-[250px] rounded-full bg-[#181818] lg:h-[400px] lg:w-[400px]">
             <Image
               src="/images/hero-image.png"
@@ -50,7 +62,7 @@ const HeroSection = () => {
               height={300}
             />
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
